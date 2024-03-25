@@ -1,0 +1,47 @@
+{
+  "kind": "collectionType",
+  "collectionName": "patients",
+  "info": {
+    "singularName": "patient",
+    "pluralName": "patients",
+    "displayName": "Patient",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "first_name": {
+      "type": "string",
+      "required": true
+    },
+    "last_name": {
+      "type": "string",
+      "required": true
+    },
+    "telecom": {
+      "type": "string"
+    },
+    "birth_date": {
+      "type": "string"
+    },
+    "address": {
+      "type": "string"
+    },
+    "gender": {
+      "type": "enumeration",
+      "enum": [
+        "Female",
+        "Male",
+        "Others"
+      ]
+    },
+    "diagnostic_reports": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::diagnostic-report.diagnostic-report",
+      "mappedBy": "patient"
+    }
+  }
+}

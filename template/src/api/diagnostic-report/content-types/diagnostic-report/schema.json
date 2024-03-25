@@ -1,0 +1,46 @@
+{
+  "kind": "collectionType",
+  "collectionName": "diagnostic_reports",
+  "info": {
+    "singularName": "diagnostic-report",
+    "pluralName": "diagnostic-reports",
+    "displayName": "DiagnosticReport",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "status": {
+      "type": "string"
+    },
+    "effectiveDateTime": {
+      "type": "string"
+    },
+    "effectivePeriod": {
+      "type": "string"
+    },
+    "category": {
+      "type": "string"
+    },
+    "issued": {
+      "type": "string"
+    },
+    "conclusion": {
+      "type": "string"
+    },
+    "patient": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::patient.patient",
+      "inversedBy": "diagnostic_reports"
+    },
+    "media": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::media.media",
+      "mappedBy": "diagnostic_report"
+    }
+  }
+}
